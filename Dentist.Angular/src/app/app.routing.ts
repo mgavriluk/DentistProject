@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 
-import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { JottingsForPatientsComponent } from "./pages/jottings-for-patients/jottings-for-patients.component";
 import { OrthodonticsComponent } from "./pages/orthodontics/orthodontics.component";

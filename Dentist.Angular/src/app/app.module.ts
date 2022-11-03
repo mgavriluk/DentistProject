@@ -10,23 +10,24 @@ import { NavbarModule } from "./shared/navbar/navbar.module";
 import { AppComponent } from "./app.component";
 import { AppRoutes } from "./app.routing";
 
-import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { OrthopedicsComponent } from "./pages/orthopedics/orthopedics.component";
 import { SurgeryComponent } from "./pages/surgery/surgery.component";
 import { TherapyComponent } from "./pages/therapy/therapy.component";
 import { OrthodonticsComponent } from "./pages/orthodontics/orthodontics.component";
 import { JottingsForPatientsComponent } from "./pages/jottings-for-patients/jottings-for-patients.component";
 import { GoogleMapsModule } from "@angular/google-maps";
+import { HomeComponent } from "./pages/home/home.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
     OrthopedicsComponent,
     SurgeryComponent,
     TherapyComponent,
     OrthodonticsComponent,
     JottingsForPatientsComponent,
+    HomeComponent,
   ],
   imports: [
     RouterModule.forRoot(AppRoutes, {
@@ -38,6 +39,7 @@ import { GoogleMapsModule } from "@angular/google-maps";
     ToastrModule.forRoot(),
     FooterModule,
     GoogleMapsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
