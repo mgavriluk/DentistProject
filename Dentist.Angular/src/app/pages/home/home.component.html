@@ -1,0 +1,182 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="row" id="1">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>РАЗРЕШИТЕ ПРЕДСТАВИТЬСЯ — ЕГОР</h2>
+            </div>
+            <div class="card-body">
+              <img src="assets/img/IMG_5561.JPG" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <img
+                src="assets/img/IMG_5542.JPG"
+                style="object-fit: cover; object-position: 50% 50%"
+              />
+            </div>
+            <div class="card-footer">
+              <p style="text-align: center">
+                «Я не терпел поражений. Я просто нашел 10 000 способов, которые
+                не работают».
+                <br />
+                Томас Эдисон
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+
+      <div class="row" id="2">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Обо мне</h2>
+            </div>
+            <div class="card-body">
+              <p>
+                Стоматолог – это врач, который занимается профилактикой,
+                диагностикой и лечением заболеваний зубов, полости рта и
+                челюстно-лицевой области. Профессия стоматолог – это довольно
+                широкое понятие, включающее в себя целый ряд специалистов узкого
+                профиля. <br />
+                <b>К стоматологам относят:</b><br />
+              </p>
+              <ul>
+                <li>стоматологов-терапевтов,</li>
+                <li>стоматологов-хирургов,</li>
+                <li>стоматологов-ортопедов,</li>
+                <li>стоматологов-парадонтологов</li>
+                <li>ортодонтов.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="3">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Портфолио</h2>
+              <h3>Ортопедия:</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/img/IMG_4871.JPG" />
+                </div>
+
+                <div class="col-md-6">
+                  <img src="assets/img/IMG_5557.jpg" />
+                </div>
+              </div>
+              <br />
+
+              <h3>Хирургия:</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/img/IMG_5667.jpg" />
+                </div>
+
+                <div class="col-md-6">
+                  <img src="assets/img/IMG_5446.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="4">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Свяжитесь со мной</h2>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <p style="text-align: center; vertical-align: middle">
+                    г. Одесса, ул.Черновола 14 <br />
+                    lipovskiy@gmail.com <br />
+                    0631652223
+                  </p>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Имя</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="clientFirstName"
+                      placeholder="Введите свое имя"
+                    />
+                    <label>Фамилия</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="clientLastName"
+                      placeholder="Введите свою фамилию"
+                    />
+                    <label>Возраст</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="clientAge"
+                      placeholder="Введите свой возраст"
+                    />
+                    <label>Номер телефона</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="clientPhoneNumber"
+                      placeholder="Добавьте номер телефона"
+                    />
+                    <label>Сообщение</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="message"
+                      placeholder="Добавьте сообщение..."
+                    />
+                  </div>
+                  <div class="update ml-auto mr-auto">
+                    <button class="btn btn-primary btn-round" type="submit">
+                      Отправить заявку
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
