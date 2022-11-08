@@ -1,4 +1,6 @@
 ﻿using Dentist.Application.Common.Interfaces;
+using Dentist.Domain.Auth;
+using Dentist.Infrastructure.Identity;
 using Dentist.Infrastructure.Persistance.Contexts;
 using Dentist.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +19,14 @@ namespace Dentist.Infrastructure.Persistance.Extensions
                 optionBuilder.UseSqlServer(configuration.GetConnectionString("DentistDb"));
             });
 
+            services.AddIdentity<User, Role>(optionBuilder =>
+            {
+                optionBuilder.Password.RequiredLength = 8;
+            }).AddEntityFrameworkStores<DentistDbContext>();
+
             services.AddScoped<IRepository, GenericRepository>();
+            services.AddTransient<IAuthenticationService, AuthenticationService>();
+            services.AddTransient<ITokenService, TokenService>();
 
             return services;
         }

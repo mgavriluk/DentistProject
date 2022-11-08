@@ -9,9 +9,6 @@
         public int? DiscountId { get; set; }
         public virtual Discount? Discount { get; set; }
 
-        public int? UserId { get; set; }
-        public virtual User? User { get; set; }
-
         public virtual ICollection<Appointment>? Appointments { get; set; }
     }
 }

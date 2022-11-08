@@ -19,8 +19,8 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/appointment",
-    title: "Онлайн запись",
-    icon: "nc-book-bookmark",
+    title: "Расположение",
+    icon: "nc-map-big",
     class: "",
   },
 ];
