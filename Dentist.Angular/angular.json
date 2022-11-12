@@ -197,6 +197,7 @@
               "projects/admin-layout/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/admin-layout/src/styles.css"
             ],
             "scripts": []
@@ -244,7 +245,10 @@
               "browserTarget": "admin-layout:build:development"
             }
           },
-          "options": {"port": 4201},
+          "options": {
+            "port": 4201, 
+            "proxyConfig": "proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -265,6 +269,7 @@
               "projects/admin-layout/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/admin-layout/src/styles.css"
             ],
             "scripts": []

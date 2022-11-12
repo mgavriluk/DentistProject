@@ -17,7 +17,7 @@ namespace Dentist.API.Extensions
             builder.Services.AddAutoMapper(typeof(ServiceProfile));
             builder.Services.AddAuthentication(builder.Configuration);
             builder.Services.AddApplication();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwagger();
         }
 
         public static IServiceCollection AddAuthentication(this IServiceCollection services, 
