@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using Dentist.Application.Common.Interfaces;
+using Dentist.Application.Common.Models;
+using Dentist.Application.Extensions;
 using Dentist.Domain;
 using Dentist.Infrastructure.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.Linq.Expressions;
 
 namespace Dentist.Infrastructure.Persistance.Repositories
 {
@@ -46,8 +47,16 @@ namespace Dentist.Infrastructure.Persistance.Repositories
         public async Task<T> GetById<T>(int id) where T : BaseEntity
         {
             return await _dbContext.Set<T>().FindAsync(id);
-        }  
-              
+        }
+
+        public async Task<PaginatedResult<TDto>> GetPagedData<TEntity, TDto>(PagedRequest pagedRequest)
+            where TEntity : BaseEntity
+            where TDto : class
+        {
+            return await _dbContext.Set<TEntity>().CreatePaginatedResultAsync<TEntity, TDto>(pagedRequest,
+                _mapper);
+        }
+
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();

@@ -12,6 +12,8 @@ namespace Dentist.Infrastructure.Persistance.DataSeed
             context.Database.Migrate();
 
             await UsersSeed.Seed(userManager);
+            await ServicesSeed.Seed(context);
+            await DiscountsSeed.Seed(context);
         }
     }
 }

@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AdminDashboardComponent } from "./components/admin-dashboard/admin-dashboard.component";
-import { DentistServicesComponent } from "./components/dentist-services/dentist-services.component";
-import { HomeComponent } from "./components/home/home.component";
+import { AdminDashboardComponent } from "../admin-dashboard/admin-dashboard.component";
+import { DentistServicesComponent } from "../dentist-services/dentist-services.component";
+import { HomeComponent } from "../home/home.component";
 
 const routes: Routes = [
   {

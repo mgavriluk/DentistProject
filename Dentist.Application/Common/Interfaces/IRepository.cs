@@ -1,4 +1,5 @@
-﻿using Dentist.Domain;
+﻿using Dentist.Application.Common.Models;
+using Dentist.Domain;
 
 namespace Dentist.Application.Common.Interfaces
 {
@@ -13,5 +14,9 @@ namespace Dentist.Application.Common.Interfaces
         void Add<T>(T entity) where T : BaseEntity;
 
         Task<T> Delete<T>(int id) where T : BaseEntity;
+
+        Task<PaginatedResult<TDto>> GetPagedData<TEntity, TDto>(PagedRequest pagedRequest) 
+            where TEntity : BaseEntity 
+            where TDto : class;
     }
 }

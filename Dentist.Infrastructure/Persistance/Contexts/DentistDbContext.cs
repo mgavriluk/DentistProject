@@ -9,13 +9,13 @@ namespace Dentist.Infrastructure.Persistance.Contexts
 {
     public class DentistDbContext : IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
     {
-        DbSet<Client> Clients { get; set; }
-        DbSet<Service> Services { get; set; }
-        DbSet<Discount> Discounts { get; set; }
-        DbSet<Appointment> Appointments { get; set; }
-        DbSet<ConsultingRoom> ConsultingRooms { get; set; }
-        DbSet<PhoneNumber> PhoneNumbers { get; set; }
-        DbSet<WorkingTime> WorkingTimes { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<ConsultingRoom> ConsultingRooms { get; set; }
+        public DbSet<PhoneNumber> PhoneNumbers { get; set; }
+        public DbSet<WorkingTime> WorkingTimes { get; set; }
 
         public DentistDbContext(DbContextOptions<DentistDbContext> options): base(options)
         {

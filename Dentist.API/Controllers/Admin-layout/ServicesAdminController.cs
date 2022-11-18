@@ -1,6 +1,7 @@
 ﻿using Dentist.Application.App.Dtos;
 using Dentist.Application.App.Services.Commands;
 using Dentist.Application.App.Services.Queries;
+using Dentist.Application.Common.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,10 +18,10 @@ namespace Dentist.API.Controllers.Admin_layout
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ServiceDto>> GetAllServices()
+        public async Task<PaginatedResult<ServiceDto>> GetPagedServices([FromQuery] PagedRequest pagedRequest)
         {
-            var serviceList = await _mediator.Send(new GetAllServicesQuery());
-            return serviceList;
+            var responce = await _mediator.Send(new GetServicesPagedQuery() { PagedRequest = pagedRequest });
+            return responce;
         }
 
         [HttpGet("/api/admin/service/{id}")]

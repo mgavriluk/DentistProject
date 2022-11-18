@@ -10,7 +10,6 @@ namespace Dentist.Application.App.Services.Commands
     {
         public string Title { get; set; }
         public decimal Price { get; set; }
-        public int? DiscountId { get; set; }
     }
 
     public class CreateServiceCommandHandler : IRequestHandler<CreateServiceCommand, ServiceDto>

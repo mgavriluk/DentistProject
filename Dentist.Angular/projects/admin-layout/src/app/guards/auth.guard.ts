@@ -16,16 +16,7 @@ import { AuthService } from "../services/auth.service";
 export class AuthGuard implements CanActivate, CanDeactivate<unknown> {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canDeactivate(
-    component: unknown,
-    currentRoute: ActivatedRouteSnapshot,
-    currentState: RouterStateSnapshot,
-    nextState?: RouterStateSnapshot
-  ):
-    | boolean
-    | UrlTree
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree> {
+  canDeactivate(): boolean {
     if (confirm("Вы действительно хотите выйти?")) {
       return true;
     } else {
@@ -35,11 +26,7 @@ export class AuthGuard implements CanActivate, CanDeactivate<unknown> {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  ): boolean {
     if (!this.authService.isAuthenticated()) {
       this.router.navigate(["login"]);
       return false;

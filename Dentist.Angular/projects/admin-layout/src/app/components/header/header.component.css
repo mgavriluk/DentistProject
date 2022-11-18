@@ -1,5 +1,5 @@
 mat-sidenav-content mat-toolbar .logout{
-    display: block; /* смещает только блоки */ 
+    display: block; 
     margin-left: auto;
 }
 .sidenav{

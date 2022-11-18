@@ -5,7 +5,6 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
@@ -13,6 +12,9 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatOptionModule } from "@angular/material/core";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
+import { MatInputModule } from "@angular/material/input";
+import { MatSortModule } from "@angular/material/sort";
+import { MatDialogModule } from "@angular/material/dialog";
 
 const modules = [
   MatTableModule,
@@ -21,14 +23,16 @@ const modules = [
   MatCardModule,
   MatPaginatorModule,
   MatFormFieldModule,
-  MatInputModule,
   MatToolbarModule,
   MatMenuModule,
+  MatInputModule,
   MatListModule,
   MatSlideToggleModule,
   MatSelectModule,
   MatOptionModule,
   MatSidenavModule,
+  MatSortModule,
+  MatDialogModule,
 ];
 
 @NgModule({
