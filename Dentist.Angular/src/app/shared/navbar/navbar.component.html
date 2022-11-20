@@ -1,0 +1,46 @@
+<nav
+  class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent"
+>
+  <div class="navbar-wrapper">
+    <div class="navbar-toggle">
+      <button type="button" class="navbar-toggler" (click)="sidebarToggle()">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+    </div>
+    <a class="navbar-brand" routerLink="/home">Home</a>
+  </div>
+  <div
+    class="collapse navbar-collapse justify-content-center"
+    id="collapseExample"
+    [ngbCollapse]="isCollapsed"
+  >
+    <div ngbDropdown class="btn-group">
+      <button class="btn btn-primary" id="dropdownBasic2" ngbDropdownToggle>
+        Услуги
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+        <button ngbDropdownItem routerLink="/orthopedics">Ортопедия</button>
+        <button ngbDropdownItem routerLink="/surgery">Хирургия</button>
+        <button ngbDropdownItem routerLink="/therapy">Терапия</button>
+        <button ngbDropdownItem routerLink="/orthodontics">Ортодонтия</button>
+      </div>
+    </div>
+
+    <div ngbDropdown class="btn-group">
+      <button class="btn btn-primary" id="dropdownBasic2" ngbDropdownToggle>
+        Пациентам
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+        <button ngbDropdownItem routerLink="/jottings-for-patients">
+          Памятки пациентам
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar-collapse justify-content-end">
+      <h5 style="padding-top: 25px">+38(063)165-22-23</h5>
+    </div>
+  </div>
+</nav>

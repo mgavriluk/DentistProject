@@ -1,0 +1,7 @@
+h3 {
+    text-align: right;
+    margin-right: 8px;
+}
+.container{
+    flex-shrink: 0;
+}

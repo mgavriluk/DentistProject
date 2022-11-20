@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>Вход</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Имя пользователя"
+            formControlName="username"
+            #userName
+          />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Пароль"
+            formControlName="password"
+            #password
+          />
+        </mat-form-field>
+      </p>
+
+      <p
+        *ngIf="
+          this.form.get('password')?.invalid &&
+          this.form.get('password')?.touched
+        "
+        class="error"
+      >
+        Пароль должен содержать от 8 до 16 символов, включая как минимум одну
+        строчную букву, одну заглавную букву и один специальный символ
+      </p>
+
+      <div class="button">
+        <button [disabled]="form.invalid" type="submit" mat-button>
+          Войти
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,294 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="row" id="1">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>
+                ВРАЧ-СТОМАТОЛОГ ШИРОКОГО ПРОФИЛЯ - <br />
+                ЛИПОВСКИЙ ЕГОР ИГОРЕВИЧ
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-7">
+                  <img src="assets/img/main.JPG" />
+                </div>
+                <div class="col-md-5">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <ul>
+                    <li>Стоматолог, который станет твоим другом.</li>
+                    <li>Комплексный подход к вашей улыбке.</li>
+                    <li>Для меня нет безнадёжных зубов.</li>
+                    <li>Консультация бесплатно.</li>
+                  </ul>
+                  <br /><br /><br />
+                  <p>
+                    <b>СТЕСНЯЕШЬСЯ СВОЕЙ УЛЫБКИ?</b><br />
+                    <b>ТОГДА ТЕБЕ ТОЧНО КО МНЕ</b><br />
+                    Я предоставляю такие услуги, как:
+                  </p>
+                  <ul>
+                    <li>ЛЕЧЕНИЕ</li>
+                    <li>ПРОТЕЗИРОВАНИЕ</li>
+                    <li>УДАЛЕНИЕ</li>
+                    <li>БРЕКЕТ-СИСТЕМЫ</li>
+                    <li>ИМПЛАНТЫ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <img
+                src="assets/img/IMG_5542.JPG"
+                style="object-fit: cover; object-position: 50% 50%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+
+      <div class="row" id="2">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Обо мне</h2>
+            </div>
+            <div class="card-body">
+              <p>
+                Я предоставляю клиентам много преимуществ. Выполняю свою работу
+                высококачественно, чему способствуют современные протоколы
+                выполнения манипуляций:
+              </p>
+              <ul>
+                <li>на большинство процедур выдаю долгосрочную гарантию;</li>
+                <li>обеспечиваю индивидуальный комплексный подход;</li>
+              </ul>
+              <br />
+              <p>
+                Я проведу качественное и недорогое отбеливание, лечение кариеса,
+                пульпита, переодонтита, эстетическую реставрацию ваших зубов,
+                протезирование и иплантацию по самым современным протоколам, а
+                так же качественное ортодонтическое лечение при помощи
+                брекет-систем, и успешно решу многие другие проблемы ротовой
+                полости. <br />
+                Приходите ко мне , и оцените уровень обслуживания и
+                профессиональной терапии!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="assets/img/portfolio2.JPG" />
+                </div>
+                <div class="col-md-3">
+                  <img src="assets/img/portfolio1.JPG" />
+                </div>
+                <div class="col-md-3">
+                  <img src="assets/img/portfolio3.JPG" />
+                </div>
+                <div class="col-md-3">
+                  <img src="assets/img/portfolio4.JPG" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="3">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Мои услуги</h2>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>№</th>
+                      <th>Название</th>
+                      <th>Цена</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let dentistService of dentistServicesList;
+                        let i = index
+                      "
+                    >
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ dentistService.title }}</td>
+                      <td>
+                        {{ dentistService.price | currency: "USD":"symbol" }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="4">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Свяжитесь со мной</h2>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <p style="text-align: center">
+                    <br /><br /><br /><br /><br /><br />
+                    г. Одесса, ул.Черновола 14 <br />
+                    lipovskiy@gmail.com <br />
+                    0631652223
+                  </p>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                  <form #form="ngForm" (ngSubmit)="submit(form)">
+                    <div class="form-group">
+                      <label>Имя</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="clientFirstName"
+                        placeholder="Введите свое имя"
+                        required
+                        #firstName="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="
+                          clientFirstName == '' &&
+                          (firstName.dirty || firstName.touched)
+                        "
+                      >
+                        This field is required
+                      </div>
+                      <label>Фамилия</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="clientLastName"
+                        placeholder="Введите свою фамилию"
+                        required
+                        #lastName="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="
+                          clientLastName == '' &&
+                          (lastName.dirty || lastName.touched)
+                        "
+                      >
+                        This field is required
+                      </div>
+                      <label>Возраст</label>
+                      <input
+                        class="form-control"
+                        type="number"
+                        [(ngModel)]="clientAge"
+                        placeholder="Введите свой возраст"
+                        min="0"
+                        max="100"
+                        #age="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="!clientAge && (age.dirty || age.touched)"
+                      >
+                        This field is required
+                      </div>
+                      <label>Номер телефона</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="clientPhoneNumber"
+                        placeholder="Добавьте номер телефона"
+                        required
+                        #phoneNumber="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="
+                          clientPhoneNumber == '' &&
+                          (phoneNumber.dirty || phoneNumber.touched)
+                        "
+                      >
+                        This field is required
+                      </div>
+                    </div>
+                    <div class="update ml-auto mr-auto">
+                      <button
+                        class="btn btn-primary btn-round"
+                        type="submit"
+                        [disabled]="!form.valid"
+                      >
+                        Отправить заявку
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="5">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Расположение</h2>
+            </div>
+            <div class="card-body">
+              <google-map
+                height="400px"
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="moveMap($event)"
+                (mapMousemove)="move($event)"
+              >
+                <map-marker
+                  [position]="markerPosition"
+                  [options]="markerOptions"
+                ></map-marker>
+              </google-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer-cmp></footer-cmp>
+</div>
