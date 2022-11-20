@@ -4,6 +4,7 @@ import { map, catchError } from "rxjs/operators";
 import { Observable, throwError } from "rxjs";
 import { IDentistService } from "../models/dentist-service";
 import { IPaginatedResult } from "../models/paginated-result";
+import { IClient } from "../models/client";
 
 export interface DentistServicesData {
   items: IDentistService[];
@@ -51,5 +52,35 @@ export class AdminService {
     return this.http.delete<IDentistService>(
       "api/admin/dentist-services/" + id
     );
+  }
+
+  getClients(
+    pageIndex: number,
+    pageSize: number,
+    columnNameForSorting: string,
+    sortDirection: string
+  ): Observable<IPaginatedResult<IClient>> {
+    let params = new HttpParams();
+
+    params = params.append("PageIndex", String(pageIndex));
+    params = params.append("PageSize", String(pageSize));
+    params = params.append("ColumnNameForSorting", "%22%22");
+    params = params.append("SortDirection", "%22%22");
+
+    return this.http.get<IPaginatedResult<IClient>>("/api/admin/clients", {
+      params,
+    });
+  }
+
+  postClient(data: IClient) {
+    return this.http.post<IClient>("api/admin/clients", data);
+  }
+
+  putClient(data: IClient, id: number) {
+    return this.http.put<IClient>("api/admin/clients/" + id, data);
+  }
+
+  deleteClient(id: number) {
+    return this.http.delete<IClient>("api/admin/clients/" + id);
   }
 }

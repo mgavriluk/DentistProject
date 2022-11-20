@@ -119,95 +119,172 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row" id="3">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <h2 style="text-align: center">Свяжитесь со мной</h2>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <p style="text-align: center">
-                  <br /><br /><br /><br /><br /><br />
-                  г. Одесса, ул.Черновола 14 <br />
-                  lipovskiy@gmail.com <br />
-                  0631652223
-                </p>
+      <div class="row" id="3">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Мои услуги</h2>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>№</th>
+                      <th>Название</th>
+                      <th>Цена</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let dentistService of dentistServicesList;
+                        let i = index
+                      "
+                    >
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ dentistService.title }}</td>
+                      <td>
+                        {{ dentistService.price | currency: "USD":"symbol" }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-md-2"></div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label>Имя</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    [(ngModel)]="clientFirstName"
-                    placeholder="Введите свое имя"
-                  />
-                  <label>Фамилия</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    [(ngModel)]="clientLastName"
-                    placeholder="Введите свою фамилию"
-                  />
-                  <label>Возраст</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    [(ngModel)]="clientAge"
-                    placeholder="Введите свой возраст"
-                  />
-                  <label>Номер телефона</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    [(ngModel)]="clientPhoneNumber"
-                    placeholder="Добавьте номер телефона"
-                  />
-                  <label>Сообщение</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    [(ngModel)]="message"
-                    placeholder="Добавьте сообщение..."
-                  />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="4">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Свяжитесь со мной</h2>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <p style="text-align: center">
+                    <br /><br /><br /><br /><br /><br />
+                    г. Одесса, ул.Черновола 14 <br />
+                    lipovskiy@gmail.com <br />
+                    0631652223
+                  </p>
                 </div>
-                <div class="update ml-auto mr-auto">
-                  <button class="btn btn-primary btn-round" type="submit">
-                    Отправить заявку
-                  </button>
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                  <form #form="ngForm" (ngSubmit)="submit(form)">
+                    <div class="form-group">
+                      <label>Имя</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="clientFirstName"
+                        placeholder="Введите свое имя"
+                        required
+                        #firstName="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="
+                          clientFirstName == '' &&
+                          (firstName.dirty || firstName.touched)
+                        "
+                      >
+                        This field is required
+                      </div>
+                      <label>Фамилия</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="clientLastName"
+                        placeholder="Введите свою фамилию"
+                        required
+                        #lastName="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="
+                          clientLastName == '' &&
+                          (lastName.dirty || lastName.touched)
+                        "
+                      >
+                        This field is required
+                      </div>
+                      <label>Возраст</label>
+                      <input
+                        class="form-control"
+                        type="number"
+                        [(ngModel)]="clientAge"
+                        placeholder="Введите свой возраст"
+                        min="0"
+                        max="100"
+                        #age="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="!clientAge && (age.dirty || age.touched)"
+                      >
+                        This field is required
+                      </div>
+                      <label>Номер телефона</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="clientPhoneNumber"
+                        placeholder="Добавьте номер телефона"
+                        required
+                        #phoneNumber="ngModel"
+                      />
+                      <div
+                        style="color: red"
+                        *ngIf="
+                          clientPhoneNumber == '' &&
+                          (phoneNumber.dirty || phoneNumber.touched)
+                        "
+                      >
+                        This field is required
+                      </div>
+                    </div>
+                    <div class="update ml-auto mr-auto">
+                      <button
+                        class="btn btn-primary btn-round"
+                        type="submit"
+                        [disabled]="!form.valid"
+                      >
+                        Отправить заявку
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row" id="4">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <h2 style="text-align: center">Расположение</h2>
-          </div>
-          <div class="card-body">
-            <google-map
-              height="400px"
-              width="100%"
-              [center]="center"
-              [zoom]="zoom"
-              (mapClick)="moveMap($event)"
-              (mapMousemove)="move($event)"
-            >
-              <map-marker
-                [position]="markerPosition"
-                [options]="markerOptions"
-              ></map-marker>
-            </google-map>
+      <div class="row" id="5">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 style="text-align: center">Расположение</h2>
+            </div>
+            <div class="card-body">
+              <google-map
+                height="400px"
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="moveMap($event)"
+                (mapMousemove)="move($event)"
+              >
+                <map-marker
+                  [position]="markerPosition"
+                  [options]="markerOptions"
+                ></map-marker>
+              </google-map>
+            </div>
           </div>
         </div>
       </div>

@@ -17,17 +17,18 @@ import { OrthodonticsComponent } from "./pages/orthodontics/orthodontics.compone
 import { JottingsForPatientsComponent } from "./pages/jottings-for-patients/jottings-for-patients.component";
 import { GoogleMapsModule } from "@angular/google-maps";
 import { HomeComponent } from "./pages/home/home.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     OrthopedicsComponent,
     SurgeryComponent,
-    TherapyComponent,
-    OrthodonticsComponent,
-    JottingsForPatientsComponent,
     HomeComponent,
+    OrthodonticsComponent,
+    TherapyComponent,
+    JottingsForPatientsComponent,
   ],
   imports: [
     RouterModule.forRoot(AppRoutes, {
@@ -40,6 +41,8 @@ import { FormsModule } from "@angular/forms";
     FooterModule,
     GoogleMapsModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -24,6 +24,11 @@ namespace Dentist.Infrastructure.Persistance.DataSeed
                     StartDate = DateTime.Now,
                     EndDate = DateTime.Now.AddYears(1)
                 };
+
+                context.Discounts.Add(zsu);
+                context.Discounts.Add(pensoiner);
+
+                await context.SaveChangesAsync();
             }
         }
     }

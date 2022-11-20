@@ -8,6 +8,5 @@
         public int? Age { get; set; }
 
         public int? DiscountId { get; set; }
-        public int? UserId { get; set; }
     }
 }

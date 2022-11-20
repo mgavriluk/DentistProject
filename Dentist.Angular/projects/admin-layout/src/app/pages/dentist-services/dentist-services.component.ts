@@ -4,7 +4,7 @@ import { IDentistService } from "../../models/dentist-service";
 import { AdminService } from "../../services/admin.service";
 import { PageEvent } from "@angular/material/paginator";
 import { MatDialog } from "@angular/material/dialog";
-import { AddServiceDialogComponent } from "../add-service-dialog/add-service-dialog.component";
+import { AddServiceDialogComponent } from "../../components/add-service-dialog/add-service-dialog.component";
 
 @Component({
   selector: "app-dentist-services",
@@ -13,6 +13,7 @@ import { AddServiceDialogComponent } from "../add-service-dialog/add-service-dia
 })
 export class DentistServicesComponent implements AfterViewInit {
   dentistServicesList: IDentistService[] = [];
+  isBusy: boolean = false;
   total: number = 0;
   pageSize: number = 5;
   pageEvent: PageEvent;
@@ -30,6 +31,7 @@ export class DentistServicesComponent implements AfterViewInit {
     });
   }
   fetch() {
+    this.isBusy = true;
     this.adminService
       .getDentistServices(this.pageIndex, this.pageSize, "", "")
       .subscribe((res) => {
@@ -38,6 +40,7 @@ export class DentistServicesComponent implements AfterViewInit {
         this.pageSize = res.pageSize;
         this.pageIndex = res.pageIndex;
       });
+    this.isBusy = false;
   }
   displayedColumns: string[] = ["name", "price", "actions"];
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -70,14 +73,16 @@ export class DentistServicesComponent implements AfterViewInit {
   }
 
   deleteService(id: number) {
-    this.adminService.deleteDentistService(id).subscribe({
-      next: () => {
-        alert("Услуга удалена");
-        this.fetch();
-      },
-      error: () => {
-        alert("Ошибка");
-      },
-    });
+    if (confirm("Вы действительно хотите удалить услугу?")) {
+      this.adminService.deleteDentistService(id).subscribe({
+        next: () => {
+          alert("Услуга удалена");
+          this.fetch();
+        },
+        error: () => {
+          alert("Ошибка");
+        },
+      });
+    }
   }
 }

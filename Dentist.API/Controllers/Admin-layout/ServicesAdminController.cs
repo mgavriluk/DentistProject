@@ -24,13 +24,6 @@ namespace Dentist.API.Controllers.Admin_layout
             return responce;
         }
 
-        [HttpGet("/api/admin/service/{id}")]
-        public async Task<ServiceDto> GetService(int id)
-        {
-            var serviceDto = await _mediator.Send(new GetServiceByIdQuery { Id = id });
-            return serviceDto;
-        }
-
         [HttpPost]
         public async Task<ServiceDto> CreateService(CreateServiceCommand createdService)
         {

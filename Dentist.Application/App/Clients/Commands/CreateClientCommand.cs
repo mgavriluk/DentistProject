@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Dentist.Application.App.Discounts.Commands;
 using Dentist.Application.App.Dtos;
 using Dentist.Application.Common.Interfaces;
 using Dentist.Domain;
@@ -14,7 +13,6 @@ namespace Dentist.Application.App.Clients.Commands
         public int? Age { get; set; }
 
         public int? DiscountId { get; set; }
-        public int? UserId { get; set; }
     }
 
     public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, ClientDto>

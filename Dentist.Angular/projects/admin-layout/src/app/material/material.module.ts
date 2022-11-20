@@ -15,6 +15,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatInputModule } from "@angular/material/input";
 import { MatSortModule } from "@angular/material/sort";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const modules = [
   MatTableModule,
@@ -26,6 +27,7 @@ const modules = [
   MatToolbarModule,
   MatMenuModule,
   MatInputModule,
+  MatProgressSpinnerModule,
   MatListModule,
   MatSlideToggleModule,
   MatSelectModule,
