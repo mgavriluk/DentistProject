@@ -174,75 +174,94 @@
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                  <form #form="ngForm" (ngSubmit)="submit(form)">
+                  <!-- <form [formGroup]="form" (ngSubmit)="submit(form)">
+                    <label>Имя</label><br />
+                    <input
+                      type="text"
+                      placeholder="Введите свое имя"
+                      formControlName="firstName"
+                      #firstName
+                    />
+                    <br />
+                  </form> -->
+                  <form
+                    #form="ngForm"
+                    (ngSubmit)="submit(form)"
+                    autocomplete="off"
+                  >
                     <div class="form-group">
                       <label>Имя</label>
                       <input
                         class="form-control"
                         type="text"
-                        [(ngModel)]="clientFirstName"
-                        placeholder="Введите свое имя"
                         required
+                        name="firstName"
+                        [(ngModel)]="client.firstName"
+                        placeholder="Введите свое имя"
                         #firstName="ngModel"
                       />
                       <div
                         style="color: red"
-                        *ngIf="
-                          clientFirstName == '' &&
-                          (firstName.dirty || firstName.touched)
-                        "
+                        [hidden]="firstName.valid || firstName.pristine"
+                        class="alert alert-danger"
                       >
-                        This field is required
+                        Это поле обязательно
                       </div>
+                    </div>
+                    <div class="form-group">
                       <label>Фамилия</label>
                       <input
                         class="form-control"
                         type="text"
-                        [(ngModel)]="clientLastName"
-                        placeholder="Введите свою фамилию"
                         required
+                        name="lastName"
+                        [(ngModel)]="client.lastName"
+                        placeholder="Введите свою фамилию"
                         #lastName="ngModel"
                       />
                       <div
                         style="color: red"
-                        *ngIf="
-                          clientLastName == '' &&
-                          (lastName.dirty || lastName.touched)
-                        "
+                        [hidden]="lastName.valid || lastName.pristine"
+                        class="alert alert-danger"
                       >
                         This field is required
                       </div>
+                    </div>
+                    <div class="form-group">
                       <label>Возраст</label>
                       <input
                         class="form-control"
                         type="number"
-                        [(ngModel)]="clientAge"
                         placeholder="Введите свой возраст"
                         min="0"
                         max="100"
+                        name="age"
+                        [(ngModel)]="client.age"
                         #age="ngModel"
                       />
                       <div
                         style="color: red"
-                        *ngIf="!clientAge && (age.dirty || age.touched)"
+                        [hidden]="age.valid || age.pristine"
+                        class="alert alert-danger"
                       >
                         This field is required
                       </div>
+                    </div>
+                    <div class="form-group">
                       <label>Номер телефона</label>
                       <input
                         class="form-control"
                         type="text"
-                        [(ngModel)]="clientPhoneNumber"
                         placeholder="Добавьте номер телефона"
+                        name="phoneNumber"
                         required
+                        [(ngModel)]="clientPhoneNumber"
                         #phoneNumber="ngModel"
                       />
                       <div
                         style="color: red"
-                        *ngIf="
-                          clientPhoneNumber == '' &&
-                          (phoneNumber.dirty || phoneNumber.touched)
-                        "
+                        [hidden]="phoneNumber.valid || phoneNumber.pristine"
+                        class="alert alert-danger"
                       >
                         This field is required
                       </div>
@@ -251,7 +270,7 @@
                       <button
                         class="btn btn-primary btn-round"
                         type="submit"
-                        [disabled]="!form.valid"
+                        [disabled]="!form.form.valid"
                       >
                         Отправить заявку
                       </button>
@@ -289,6 +308,6 @@
         </div>
       </div>
     </div>
+    <footer-cmp></footer-cmp>
   </div>
-  <footer-cmp></footer-cmp>
 </div>

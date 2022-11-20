@@ -6,7 +6,7 @@ builder.AddServices();
 
 var app = builder.Build();
 
-await app.SeedUsers();
+await app.SeedData();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -13,7 +13,6 @@ namespace Dentist.Application.App.Clients.Commands
         public int? Age { get; set; }
 
         public int? DiscountId { get; set; }
-        public int? UserId { get; set; }
     }
 
     public class UpdateClientCommandHandler : IRequestHandler<UpdateClientCommand>

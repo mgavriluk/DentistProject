@@ -12,7 +12,6 @@ import { AddServiceDialogComponent } from "../components/add-service-dialog/add-
 import { ReactiveFormsModule } from "@angular/forms";
 import { ClientsComponent } from "../pages/clients/clients.component";
 import { DiscountsComponent } from "../pages/discounts/discounts.component";
-import { AddClientDialogComponent } from "../components/add-client-dialog/add-client-dialog.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { AddClientDialogComponent } from "../components/add-client-dialog/add-cl
     AddServiceDialogComponent,
     ClientsComponent,
     DiscountsComponent,
-    AddClientDialogComponent,
   ],
   imports: [
     CommonModule,

@@ -7,23 +7,15 @@ namespace Dentist.API.Extensions
 {
     public static class HostExtensions
     {
-        public static async Task SeedUsers(this IHost host)
+        public static async Task SeedData(this IHost host)
         {
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<DentistDbContext>();
+                var userManager = services.GetRequiredService<UserManager<User>>();
 
-                try
-                {
-                    var context = services.GetRequiredService<DentistDbContext>();
-                    var userManager = services.GetRequiredService<UserManager<User>>();
-
-                    await SeedFacade.SeedData(context, userManager);
-                }
-                catch (Exception)
-                {
-                    throw new Exception();
-                }
+                await SeedFacade.SeedData(context, userManager);
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Dentist.Application.App.Clients.Commands;
 using Dentist.Application.App.Dtos;
 using Dentist.Application.Common.Interfaces;
 using Dentist.Domain;

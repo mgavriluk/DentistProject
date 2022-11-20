@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map, catchError } from "rxjs/operators";
-import { Observable, throwError } from "rxjs";
+import { Observable } from "rxjs";
 import { IDentistService } from "../models/dentist-service";
 import { IPaginatedResult } from "../models/paginated-result";
 import { IClient } from "../models/client";

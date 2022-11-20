@@ -12,10 +12,7 @@ import { IDentistService } from "../../../../projects/admin-layout/src/app/model
 export class HomeComponent implements OnInit {
   dentistServicesList: IDentistService[] = [];
   client: Client = new Client();
-  clientFirstName: string = "";
-  clientLastName: string = "";
   clientPhoneNumber: string = "";
-  clientAge: number;
 
   constructor(
     private dentistServiceService: DentistServicesService,
@@ -46,12 +43,7 @@ export class HomeComponent implements OnInit {
   move(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) this.display = event.latLng.toJSON();
   }
-
   submit(form) {
-    this.client.firstName = this.clientFirstName;
-    this.client.lastName = this.clientLastName;
-    this.client.age = this.clientAge;
-
     this.clientService.postClient(this.client).subscribe({
       next: () => {
         alert("С Вами свяжутся в ближайшее время");

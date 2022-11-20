@@ -1,16 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-orthodontics',
-  templateUrl: './orthodontics.component.html',
-  styles: [
-  ]
+  selector: "app-orthodontics",
+  templateUrl: "./orthodontics.component.html",
+  styles: [],
 })
-export class OrthodonticsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class OrthodonticsComponent {}
